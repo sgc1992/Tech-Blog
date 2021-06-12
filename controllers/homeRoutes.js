@@ -79,7 +79,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/', async (req, res) => {
+router.get('/comment', async (req, res) => {
   try {
     const commentData = await comment.findAll({
       include: [
