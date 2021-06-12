@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { blog,comment, User } = require('../models');
+const { blog, comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      blogs, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      blogs,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -41,8 +41,8 @@ router.get('/blog/:id', async (req, res) => {
     const blogA = blogData.get({ plain: true });
 
     res.render('blog', {
-      blog:blogA,
-      logged_in: req.session.logged_in
+      blog: blogA,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err.message);
@@ -62,7 +62,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -77,6 +77,30 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const commentData = await comment.findAll({
+      include: [
+        {
+          model: Comment,
+          attributes: ['text'],
+        },
+      ],
+    });
+    console.log(commentData);
+    // Serialize data so the template can read it
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('comment', {
+      comments,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
