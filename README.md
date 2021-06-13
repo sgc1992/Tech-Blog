@@ -1,5 +1,11 @@
 # 14 Model-View-Controller (MVC): Tech Blog
 
+## Your Task
+
+Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
+
+Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+
 ## User Story
 
 ```md
@@ -8,8 +14,9 @@ I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 
-## Acceptance Criteria
+## Description of the project
 
+```md
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
@@ -51,26 +58,24 @@ The following animation demonstrates the application functionality:
 
 ![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
-## Technologies Used
+## Technologies used
 
-Javascript
 
-NPM
+* Javascript
 
-Node.js
+* NPM
 
-SQL
+* Node.js
 
-Express
+* SQL
 
-Sequelize
+* Express
 
-Handlebars
+* Sequelize
 
-Dotenv
+* Handlebars
 
-BrycptJS
-
+* Dotenv
 
 
 
