@@ -52,12 +52,6 @@ WHEN I am idle on the page for more than a set time
 THEN I am automatically signed out of the site 
 ```
 
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
-
 ## Technologies used
 
 
